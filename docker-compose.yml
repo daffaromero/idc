@@ -1,0 +1,15 @@
+services:
+  connect:
+    build: .
+    ports:
+      - "8083:8083"
+    volumes:
+      - .:/code
+  postgres:
+    image: postgres
+    container_name: postgres
+    ports:
+      - 5433:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
